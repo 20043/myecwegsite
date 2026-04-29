@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>貓裏紅 Maoli Red | 琥珀色的土地敘事</title>
+    <!-- 引入 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入 Google Fonts: 襯線體展現人文氣質 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;600;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --maoli-amber: #D35400;
+            --maoli-dark: #1C1917;
+        }
+        body {
+            font-family: 'Noto Serif TC', serif;
+            background-color: #FDFCFB;
+            scroll-behavior: smooth;
+        }
+        /* 實驗電影美學：黑白轉彩色的過渡 */
+        .hero-filter {
+            filter: grayscale(100%) contrast(110%);
+            transition: all 2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .hero-filter:hover {
+            filter: grayscale(0%) contrast(100%);
+        }
+        /* 自定義捲軸 */
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: var(--maoli-amber); }
+        
+        .fade-in { animation: fadeIn 1.5s forwards; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="text-stone-900 overflow-x-hidden">
+
+    <!-- 導覽列 -->
+    <nav class="fixed w-full z-50 px-8 py-6 flex justify-between items-center mix-blend-difference text-white">
+        <div class="text-2xl font-black tracking-tighter uppercase">Maoli Red.</div>
+        <div class="hidden md:flex space-x-12 text-sm tracking-[0.2em] font-light">
+            <a href="#shop" class="hover:text-orange-500 transition-colors">精選系列</a>
+            <a href="#story" class="hover:text-orange-500 transition-colors">品牌敘事</a>
+            <a href="#vision" class="hover:text-orange-500 transition-colors">藝術影像</a>
+        </div>
+        <div class="flex items-center space-x-4">
+            <button class="text-sm border border-white px-4 py-1 hover:bg-white hover:text-black transition">購物車 (0)</button>
+        </div>
+    </nav>
+
+    <!-- 首頁 Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 hero-filter">
+            <!-- 模擬影像：建議替換成您拍攝的苗栗茶園高對比影像 -->
+            <img src="https://images.unsplash.com/photo-1594631252845-29fc458639a0?q=80&w=2000" 
+                 alt="苗栗茶園地景" 
+                 class="w-full h-full object-cover">
+        </div>
+        <div class="relative z-10 text-center text-white px-4">
+            <h1 class="text-8xl md:text-[12rem] font-black mb-4 tracking-[0.2em] opacity-90 fade-in">貓裏紅</h1>
+            <p class="text-lg md:text-2xl font-light tracking-[0.8em] uppercase fade-in" style="animation-delay: 0.5s;">琥珀色的土地敘事</p>
+        </div>
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-white animate-bounce">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+        </div>
+    </section>
+
+    <!-- 品牌哲學區塊 -->
+    <section id="story" class="py-32 px-8 bg-stone-900 text-stone-300">
+        <div class="max-w-4xl mx-auto text-center space-y-12">
+            <h2 class="text-maoli-amber text-sm tracking-[0.5em] font-bold">THE PHILOSOPHY</h2>
+            <p class="text-2xl md:text-4xl leading-relaxed font-light">
+                我們採集苗栗山城的霧氣，<br>
+                交給小綠葉蟬親吻。每一葉紅，<br>
+                都是一場關於土地與時間的長鏡頭。
+            </p>
+            <div class="h-px w-20 bg-maoli-amber mx-auto opacity-50"></div>
+        </div>
+    </section>
+
+    <!-- 產品展示區 -->
+    <section id="shop" class="py-32 px-6 max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-20">
+            <div>
+                <h3 class="text-5xl font-bold mb-4">精選茶款</h3>
+                <p class="text-stone-500 tracking-widest uppercase text-sm">Curated Selection</p>
+            </div>
+            <div class="mt-4 md:mt-0">
+                <button class="text-stone-400 hover:text-black transition">查看所有年份 →</button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+            <!-- 產品 1 -->
+            <div class="group cursor-pointer">
+                <div class="aspect-[3/4] bg-stone-100 overflow-hidden relative mb-6">
+                    <img src="https://images.unsplash.com/photo-1597481499750-3e6b22637e12?q=80&w=800" 
+                         alt="特級貓裏紅" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105">
+                    <div class="absolute top-4 left-4 bg-white px-3 py-1 text-xs font-bold tracking-widest">LIMITED</div>
+                </div>
+                <h4 class="text-xl font-bold mb-2">初蕊 · 特級貓裏紅</h4>
+                <p class="text-stone-400 text-sm mb-4">帶有野蜂蜜香味與細緻的柑橘後韻</p>
+                <p class="text-orange-700 font-bold">NT$ 1,880</p>
+            </div>
+
+            <!-- 產品 2 -->
+            <div class="group cursor-pointer">
+                <div class="aspect-[3/4] bg-stone-100 overflow-hidden relative mb-6">
+                    <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?q=80&w=800" 
+                         alt="經典貓裏紅" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105">
+                </div>
+                <h4 class="text-xl font-bold mb-2">蜜韻 · 經典貓裏紅</h4>
+                <p class="text-stone-400 text-sm mb-4">成熟果實的醇厚口感，適合午後獨飲</p>
+                <p class="text-orange-700 font-bold">NT$ 1,280</p>
+            </div>
+
+            <!-- 產品 3 -->
+            <div class="group cursor-pointer">
+                <div class="aspect-[3/4] bg-stone-100 overflow-hidden relative mb-6">
+                    <img src="https://images.unsplash.com/photo-1563911191283-d4854b71f397?q=80&w=800" 
+                         alt="貓裏紅茶包" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105">
+                </div>
+                <h4 class="text-xl font-bold mb-2">山霧 · 隨行冷泡系列</h4>
+                <p class="text-stone-400 text-sm mb-4">將山城的清涼隨身攜帶，低溫冷萃首選</p>
+                <p class="text-orange-700 font-bold">NT$ 650</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI 虛擬品茶師功能區 -->
+    <div id="ai-container" class="fixed bottom-8 right-8 z-[100]">
+        <!-- 聊天視窗 -->
+        <div id="chat-window" class="hidden w-80 md:w-96 bg-white shadow-2xl rounded-3xl overflow-hidden border border-stone-100 flex flex-col mb-4">
+            <div class="bg-stone-900 p-6 text-white">
+                <div class="flex items-center space-x-3">
+                    <div class="w-3 h-3 bg-orange-500 rounded-full animate-pulse"></div>
+                    <span class="text-sm tracking-widest font-bold">AI 品茶師助理</span>
+                </div>
+                <p class="text-xs opacity-50 mt-1 italic">問問我關於口感、配餐或心情...</p>
+            </div>
+            
+            <div id="chat-log" class="h-80 overflow-y-auto p-6 space-y-4 bg-stone-50 text-sm scroll-smooth text-stone-700">
+                <div class="flex justify-start">
+                    <div class="bg-white p-4 rounded-2xl rounded-tl-none shadow-sm border border-stone-100 max-w-[85%]">
+                        你好。我是由貓裏紅與 AI 共同孕育的品茶助手。今天，你想品嚐什麼樣的心情？
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-4 bg-white border-t border-stone-100 flex items-center">
+                <input type="text" id="user-msg" placeholder="輸入：今天心情很憂鬱..." 
+                       class="flex-1 bg-stone-100 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-orange-500 transition-all">
+                <button onclick="sendToAI()" class="ml-2 bg-stone-900 text-white p-2 rounded-full hover:bg-orange-700 transition">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- 開啟按鈕 -->
+        <button onclick="toggleChat()" class="bg-stone-900 text-white w-16 h-16 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all duration-300">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+        </button>
+    </div>
+
+    <!-- 頁尾 -->
+    <footer class="bg-stone-100 py-20 px-8 border-t border-stone-200 text-center">
+        <div class="max-w-4xl mx-auto space-y-6">
+            <p class="text-2xl font-bold tracking-tighter">MAOLI RED.</p>
+            <div class="flex justify-center space-x-6 text-stone-400 text-xs tracking-widest">
+                <a href="#">INSTAGRAM</a>
+                <a href="#">FACEBOOK</a>
+                <a href="#">LINE OFFICIAL</a>
+            </div>
+            <p class="text-[10px] text-stone-400 uppercase tracking-widest mt-10">
+                © 2026 貓裏紅文創電商實驗室. 所有影像版權所有.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // 切換聊天視窗
+        function toggleChat() {
+            const win = document.getElementById('chat-window');
+            win.classList.toggle('hidden');
+        }
+
+        // 模擬 AI 對話邏輯 (未來可串接 Gemini API)
+        async function sendToAI() {
+            const input = document.getElementById('user-msg');
+            const log = document.getElementById('chat-log');
+            const text = input.value.trim();
+
+            if (!text) return;
+
+            // 建立用戶氣泡
+            appendMessage('user', text);
+            input.value = '';
+
+            // 模擬思考
+            const loadingId = appendMessage('system', '正在調配建議...');
+            
+            setTimeout(() => {
+                document.getElementById(loadingId).remove();
+                let reply = "";
+                
+                // 簡單的關鍵字邏輯
+                if (text.includes("憂鬱") || text.includes("累")) {
+                    reply = "這時推薦您『蜜韻系列』。它的琥珀色茶湯含有高濃度的果蜜香，像極了苗栗山城穿透雲霧的暖陽，能輕柔地包裹您的疲憊。";
+                } else if (text.includes("蛋糕") || text.includes("甜點")) {
+                    reply = "如果您正在享用甜點，『初蕊系列』的微澀後韻能與甜膩達到完美的影像式平衡，如同電影中的光影對比。";
+                } else {
+                    reply = "貓裏紅是一種需要時間品味的茶。建議您在靜下心時，細看茶葉在熱水中舒展的過程，那是我們為您準備的地景紀錄片。";
+                }
+                
+                appendMessage('system', reply);
+            }, 1000);
+        }
+
+        function appendMessage(role, msg) {
+            const log = document.getElementById('chat-log');
+            const id = 'msg-' + Date.now();
+            const wrapper = document.createElement('div');
+            wrapper.id = id;
+            wrapper.className = role === 'user' ? 'flex justify-end' : 'flex justify-start';
+            
+            const bgColor = role === 'user' ? 'bg-stone-900 text-white' : 'bg-white text-stone-700 border border-stone-100 shadow-sm';
+            const radius = role === 'user' ? 'rounded-tr-none' : 'rounded-tl-none';
+            
+            wrapper.innerHTML = `
+                <div class="p-4 rounded-2xl ${radius} ${bgColor} max-w-[85%] fade-in">
+                    ${msg}
+                </div>
+            `;
+            log.appendChild(wrapper);
+            log.scrollTop = log.scrollHeight;
+            return id;
+        }
+    </script>
+</body>
+</html>
